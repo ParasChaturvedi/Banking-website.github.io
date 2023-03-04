@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MJ Bank</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="bank.png" type="image/png" sizes="16x16" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <body onload="loader()">
+    <div id="loading"></div>
+
+    <!-- navbar  -->
+
+    <div class="navbar">
+      <div class="main-spark-logo"> 
+        <a class="spark-logo" href="index.html">
+          <img src="bank.png" alt="spark bank logo" width="42" height="42" />
+          <h3>BANK BY PARAS CHATURVEDI</h3>
+        </a>
+      </div>
+
+      <div class="nav-elements">
+        <ul class="navbar-ul">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="customer.html">Customers</a></li>
+          <li><a href="#">Transaction</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Home -->
+
+    <div class="main">
+      <div class="home">
+        <h1>WELCOME</h1>
+        <h2>Wanna Transfer Money & Facing Problem</h2>
+        <p>
+          <b
+            ><strong><u> Then Try </u></strong></b
+          ><em>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil cum
+            repellendus cumque velit! Autem tenetur veritatis minima voluptates
+            voluptate quibusdam velit odio provident incidunt adipisci. Lorem
+            ipsum dolor sit, amet consectetur adipisicing elit. Repellat ea
+            libero animi amet quisquam, harum voluptas obcaecati temporibus
+            quidem, fugiat commodi facilis accusantium praesentium ut.</em
+          >
+        </p>
+      </div>
+      <div class="home-img">
+        <div class="img-card"><img src="pay-img1.jpg" alt="" /></div>
+        <div class="img-card"><img src="pay-img2.jpg" alt="" /></div>
+        <div class="img-card"><img src="pay-img3.jpg" alt="" /></div>
+        <div class="img-card"><img src="pay-img4.jpg" alt="" /></div>
+      </div>
+      <div class="get-started">
+        <a class="get-started" href="customer.html"
+          ><button class="btnp">Pay Now</button></a
+        >
+      </div>
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+      <div class="footer">
+        <p>
+          This project is done by Paras Chaturvedi for #March_2023 GRIP by
+          <a href="https://internship.thesparksfoundation.info/" target="_blank"
+            >The Spark Foundation</a
+          >
+        </p>
+        <!-- Contact US -->
+        <div class="contact">
+          <h2>Contact Me ~</h2>
+          <ul>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/paras-chaturvedi-b38509154?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BN4QK7LMtTZeQJxg3bj6S6g%3D%3D"
+                class="linkedin"
+                target="_blank"
+                ><img src="linkedin.png" alt="" width="50px" height="50px"
+              /></a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                class="github"
+                href="https://github.com/ParasChaturvedi"
+                ><img src="github.png" alt="" width="50px" height="50px"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/maharaj_paras/"
+                class="instagram"
+                target="_blank"
+              >
+                <img src="instagram.png" alt="" width="50px" height="50px" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/9451297204"
+                class="whatsapp"
+                target="_blank"
+                ><img src="whatsapp.png" alt="" width="50px" height="50px" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <script>
+        var preloader = document.getElementById("loading");
+        function loader() {
+          preloader.style.display = "none";
+        }
+      </script>
+  <script src="script.js"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+      <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init({
+          duration: 400,
+        });
+      </script>
+    </footer>
+  </body>
+</html>

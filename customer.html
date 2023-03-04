@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customers</title>
+    <link rel="stylesheet" href="customer.css" />
+    <link rel="icon" href="bank.png" type="image/png" sizes="16x16" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- navbar  -->
+
+    <div class="navbar">
+      <div class="main-spark-logo">
+        <a class="spark-logo" href="index.html">
+          <img src="bank.png" alt="spark bank logo" width="42" height="42" />
+          <h3>BANK BY PARAS CHATURVEDI</h3>
+        </a>
+      </div>
+
+      <div class="nav-elements">
+        <ul class="navbar-ul">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#transactionHistory">All Transactions</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+        <div class="send-money">
+          <button class="btns" data-toggle="modal" data-target="#sendMoney">
+            Send Money
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Home -->
+    <div class="home">
+      <div class="main">
+        <div class="self-success">
+          <h3>Name : Mr. Paras Chaturvedi</h3>
+          <h3>Account No. : 987654321</h3>
+          <h3>
+            <span id="myAccountBalance">
+              Current Balance : &#8377; 999999
+            </span>
+          </h3>
+        </div>
+        <div class="pay">
+          <button class="btns" data-toggle="modal" data-target="#sendMoney">
+            Send Money
+          </button>
+          <a
+            class="btna"
+            href=""
+            data-toggle="modal"
+            data-target="#transactionHistory"
+            ><button class="btns">See All Transactions</button></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Money send MODAL  -->
+
+    <div
+      class="modal fade"
+      id="sendMoney"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Send Money</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  id="enterName"
+                  class="form-control"
+                  placeholder="Recipient's username"
+                  aria-label="Recipient's username"
+                  aria-describedby="basic-addon2"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text" id="basic-addon2">@ybl</span>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&#8377;</span>
+                </div>
+                <input
+                  type="text"
+                  id="enterAmount"
+                  class="form-control"
+                  placeholder=" Enter Amount"
+                  aria-label="Amount (to the nearest dollar)"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">.00</span>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              onclick="sendMoney()"
+              class="btn btn-success"
+              data-dismiss="modal"
+            >
+              Send Money
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- transaction-history-body -->
+    <div
+      class="modal fade"
+      id="transactionHistory"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Transaction History
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ol id="transaction-history-body"></ol>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- table  -->
+
+    <div class="container">
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr class="table-danger">
+              <th scope="col">Sl. No.</th>
+              <th scope="col">Name</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Bank Balance (in &#8377;)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-light">
+              <td scope="row">1</td>
+              <td>Akshat Om Pratap</td>
+              <td>akshatom@email.com</td>
+              <td>
+                <p id="akshatBankBalance">3687748</p>
+              </td>
+            </tr>
+            <tr class="table-success">
+              <td scope="row">2</td>
+              <td>Mani Pratap Singh</td>
+              <td>mani@email.com</td>
+              <td>
+                <p id="maniBankBalance">985645</p>
+              </td>
+            </tr>
+            <tr class="table-light">
+              <td scope="row">3</td>
+              <td>Dushyant Bundela</td>
+              <td>dushyant@email.com</td>
+              <td>
+                <p id="dushyantBankBalance">125455</p>
+              </td>
+            </tr>
+            <tr class="table-success">
+              <td scope="row">4</td>
+              <td>Abhishek</td>
+              <td>abhishek@email.com</td>
+              <td>
+                <p id="abhishekBankBalance">9856</p>
+              </td>
+            </tr>
+            <tr class="table-light">
+              <td scope="row">5</td>
+              <td>Arpit</td>
+              <td>arpit@email.com</td>
+              <td>
+                <p id="arpitBankBalance">9982</p>
+              </td>
+            </tr>
+            <tr class="table-success">
+              <td scope="row">6</td>
+              <td>Manvendra</td>
+              <td>manvendra@email.com</td>
+              <td>
+                <p id="manvendraBankBalance">10014</p>
+              </td>
+            </tr>
+            <tr class="table-light">
+              <td>7</td>
+              <td>Jasvendra</td>
+              <td>jasvendra@email.com</td>
+              <td>
+                <p id="jasvendraBankBalance">7985</p>
+              </td>
+            </tr>
+            <tr class="table-success">
+              <td scope="row">8</td>
+              <td>Adnan</td>
+              <td>adnan@email.com</td>
+              <td>
+                <p id="adnanBankBalance">2719</p>
+              </td>
+            </tr>
+            <tr class="table-light">
+              <td scope="row">9</td>
+              <td>Vijay</td>
+              <td>vijay@email.com</td>
+              <td>
+                <p id="vijayBankBalance">67832</p>
+              </td>
+            </tr>
+            <tr class="table-success">
+              <td scope="row">10</td>
+              <td>Ansh</td>
+              <td>ansh@email.com</td>
+              <td>
+                <p id="anshBankBalance">3954</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <!-- footer  -->
+
+    <footer>
+      <div class="footer">
+        <p>
+          This project is done by Paras Chaturvedi for #March_2023 GRIP by
+          <a href="https://internship.thesparksfoundation.info/" target="_blank"
+            >The Spark Foundation</a
+          >
+        </p>
+        <!-- Contact US -->
+        <div class="contact">
+          <h2>Contact Me ~</h2>
+          <ul>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/paras-chaturvedi-b38509154?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BN4QK7LMtTZeQJxg3bj6S6g%3D%3D"
+                class="linkedin"
+                target="_blank"
+                ><img src="linkedin.png" alt="" width="50px" height="50px"
+              /></a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                class="github"
+                href="https://github.com/ParasChaturvedi"
+                ><img src="github.png" alt="" width="50px" height="50px"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/maharaj_paras/"
+                class="instagram"
+                target="_blank"
+              >
+                <img src="instagram.png" alt="" width="50px" height="50px" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/9451297204"
+                class="whatsapp"
+                target="_blank"
+                ><img src="whatsapp.png" alt="" width="50px" height="50px" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    <script>
+      var createPTag = document.createElement("li");
+      var textNode = document.createTextNode(
+        `₹${enterAmount} is sent to recepient with ${enterName}@ybl on ${Date()}.`
+      );
+      createPTag.appendChild(textNode);
+      var element = document.getElementById("transaction-history-body");
+      element.insertBefore(createPTag, element.firstChild);
+    </script>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+  </body>
+</html>
